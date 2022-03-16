@@ -1,4 +1,4 @@
-# Problem 004:
+# Problem 4:
 #     Largest Palindrome Product
 #
 # Description:
