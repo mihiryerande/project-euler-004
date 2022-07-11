@@ -3,14 +3,16 @@
 #
 # Description:
 #     A palindromic number reads the same both ways.
-#     The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+#     The largest palindrome made from the product of
+#       two 2-digit numbers is 9009 = 91 × 99.
 #
 #     Find the largest palindrome made from the product of two 3-digit numbers.
 
 from math import ceil, floor
+from typing import Tuple
 
 
-def is_palindrome(x):
+def is_palindrome(x: int) -> bool:
     """
     Return True iff `x` is a 'palindrome' (i.e. a palindromic number),
       meaning its digits read the same both forwards and backwards.
@@ -19,7 +21,7 @@ def is_palindrome(x):
         x (int): Natural number
 
     Returns:
-        True iff `x` is a palindrome
+        (bool): True iff `x` is a palindrome
     """
     # Choosing not to use cheap trick with str
     digits = []
@@ -29,7 +31,7 @@ def is_palindrome(x):
     return digits == digits[::-1]
 
 
-def main(n):
+def main(n: int) -> Tuple[int, int, int]:
     """
     Return a 3-tuple containing the largest palindrome made from the product of two `n`-digit numbers,
       as well as the two factors themselves.
@@ -39,7 +41,11 @@ def main(n):
         n (int): Natural number
 
     Returns:
-        Returns factors and product as tuple, in order (x, y, x*y)
+        (Tuple[int, int, int]):
+            3-tuple of the largest palindromic product of two `n`-digit numbers as ...
+              * Factor `x`
+              * Factor `y`
+              * Product (x * y)
 
     Raises:
         AssertError: if incorrect params are given
@@ -68,7 +74,7 @@ def main(n):
                 lo -= 1
                 hi += 1
         mid -= 0.5
-    return None, None, None
+    return -1, -1, -1
 
 
 if __name__ == '__main__':
