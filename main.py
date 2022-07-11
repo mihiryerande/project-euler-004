@@ -80,4 +80,5 @@ def main(n: int) -> Tuple[int, int, int]:
 if __name__ == '__main__':
     d = int(input('Enter a number of digits: '))
     p, q, r = main(d)
-    print('Largest palindromic product of two {}-digit numbers:\n{} * {} = {}'.format(d, p, q, r))
+    print('Largest palindromic product of two {}-digit numbers:'.format(d))
+    print('  {} * {} = {}'.format(d, p, q, r))
